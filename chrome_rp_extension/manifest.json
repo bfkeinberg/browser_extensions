@@ -1,7 +1,7 @@
 {
     "name": "Randoplan extension",
     "description": "Launch Randoplan using the Ride with GPS route on the current page",
-    "version": "1.0.1",
+    "version": "1.1",
     "manifest_version": 3,
     "background": {
         "service_worker": "background.js"
@@ -15,7 +15,16 @@
         "48": "android-icon-48x48.png",
         "128": "apple-icon-120x120.png"
     },
-      "action"  : {
-          "default_title": "Open in randoplan"
-      }
+    "action": {
+        "default_title": "Open in randoplan"
+    },
+    "externally_connectable": {
+        "ids": [
+            "*"
+        ],
+        "matches": [
+            "*://localhost/*",
+            "*://*.randoplan.com/*"
+        ]
+    }
 }

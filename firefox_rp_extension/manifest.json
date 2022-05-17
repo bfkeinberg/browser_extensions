@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Randoplan extension",
-  "version": "1.0.0",
+  "version": "1.1",
 
   "description": "Brings up randoplan.com with the route on the current page loaded.",
 
@@ -23,5 +23,16 @@
   },
   "background": {
     "scripts": ["background-script.js"]
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.randoplan.com/*",
+        "*://localhost/*"
+      ],
+      "js": [
+        "content-script.js"
+      ]
+    }
+  ]
 }

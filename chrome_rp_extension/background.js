@@ -22,6 +22,17 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.action.onClicked.addListener((tab) => {
     const pathParams = new URL(tab.url).pathname.split('/');
-    chrome.tabs.create({url: `https://www.randoplan.com?rwgpsRoute=${pathParams[2]}&stopAfterLoad=true`});
-  });
-  
+    chrome.tabs.create({ url: `https://www.randoplan.com?rwgpsRoute=${pathParams[2]}&stopAfterLoad=true` });
+});
+
+chrome.runtime.onMessageExternal.addListener(
+    function (request, sender, sendResponse) {
+        if (request) {
+            if (request.message) {
+                if (request.message == "version") {
+                    sendResponse({ version: 1.1 });
+                }
+            }
+        }
+        return true;
+    });
