@@ -1,7 +1,7 @@
 {
     "name": "Randoplan extension",
     "description": "Launch Randoplan using the Ride with GPS route on the current page",
-    "version": "1.1",
+    "version": "1.2",
     "manifest_version": 3,
     "background": {
         "service_worker": "background.js"
@@ -24,7 +24,8 @@
         ],
         "matches": [
             "*://localhost/*",
-            "*://*.randoplan.com/*"
+            "*://*.randoplan.com/*",
+            "*://randoplan.herokuapp.com/*"
         ]
     }
 }
