@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Randoplan extension",
-  "version": "1.2",
+  "version": "1.3",
 
   "description": "Brings up randoplan.com with the route on the current page loaded.",
 
@@ -15,7 +15,7 @@
   ],
   "page_action": {
     "default_title": "Open the route in the current page in randoplan",   
-    "show_matches": ["https://ridewithgps.com/routes/*"],
+    "show_matches": ["https://ridewithgps.com/routes/*","https://www.strava.com/routes/*"],
     "default_icon": {
         "19": "icon_19.png",
         "38": "icon_38.png"
