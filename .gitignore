@@ -1,6 +1,5 @@
 .DS_Store
 *.zip
-extension/extension.xcodeproj/project.xcworkspace/xcuserdata/brian.xcuserdatad/UserInterfaceState.xcuserstate
-extension/extension.xcodeproj/project.xcworkspace/xcuserdata/brian.xcuserdatad/UserInterfaceState.xcuserstate
-extension (iOS) 2024-01-30 15-11-05/extension.ipa
+*.xcuserstate
+*ipa
 extension (iOS) 2024-01-30 15-11-05/Packaging.log
