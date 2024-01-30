@@ -4,7 +4,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
     // Clear all rules to ensure only our expected rules are set
     chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
-        // Declare a rule to enable the action on example.com pages
+        // Declare a rule to enable the action on strava or ridewithgps routes pages
         let exampleRule = {
             conditions: [
                 new chrome.declarativeContent.PageStateMatcher({
@@ -25,9 +25,9 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.action.onClicked.addListener((tab) => {
     const pathParams = new URL(tab.url).pathname.split('/');
-    if (tab.url.includes('ridewithgps.com')) {
+    if (tab.url.includes('ridewithgps.com/routes') && tab.url.match(".*[0-9]+$")) {
         chrome.tabs.create({ url: `https://www.randoplan.com?rwgpsRoute=${pathParams[2]}&stopAfterLoad=true` });
-    } else {
+    } else if (tab.url.includes('strava.com/routes') && tab.url.match(".*[0-9]+$")) {
         chrome.tabs.create({ url: `https://www.randoplan.com?strava_route=${pathParams[2]}&stopAfterLoad=true` });
     }
 });
@@ -37,7 +37,7 @@ chrome.runtime.onMessageExternal.addListener(
         if (request) {
             if (request.message) {
                 if (request.message == "version") {
-                    sendResponse({ version: 1.3 });
+                    sendResponse({ version: 1.4 });
                 }
             }
         }
