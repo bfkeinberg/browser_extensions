@@ -120,6 +120,7 @@
 		D39350262B670A0B00C56615 /* extension Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "extension Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D393502B2B670A0B00C56615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D393502C2B670A0B00C56615 /* extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = extension.entitlements; sourceTree = "<group>"; };
+		D3CA4C3C2B67758B00225F8E /* extension--macOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "extension--macOS--Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +158,7 @@
 		D3934FE12B670A0900C56615 = {
 			isa = PBXGroup;
 			children = (
+				D3CA4C3C2B67758B00225F8E /* extension--macOS--Info.plist */,
 				D3934FE62B670A0A00C56615 /* Shared (App) */,
 				D3934FEF2B670A0B00C56615 /* Shared (Extension) */,
 				D39350002B670A0B00C56615 /* iOS (App) */,
@@ -346,6 +348,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
+				ORGANIZATIONNAME = Randoplan.com;
 				TargetAttributes = {
 					D3934FFD2B670A0B00C56615 = {
 						CreatedOnToolsVersion = 15.2;
@@ -859,6 +862,7 @@
 				DEVELOPMENT_TEAM = 2B6A6N9QBQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "extension--macOS--Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = extension;
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -894,6 +898,7 @@
 				DEVELOPMENT_TEAM = 2B6A6N9QBQ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "extension--macOS--Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = extension;
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;

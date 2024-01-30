@@ -1,7 +1,6 @@
-browser.runtime.sendMessage({ greeting: "hello" }).then((response) => {
-    console.log("Received response: ", response);
-});
-
-browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    console.log("Received request: ", request);
-});
+//browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
+//    if (request.command === "load") {
+//        browser.runtime.sendMessage({ command:"load", url:request.url });
+//        }
+//    })
+//    

@@ -4,8 +4,9 @@
 
     "name": "__MSG_extension_name__",
     "description": "__MSG_extension_description__",
-    "version": "1.0",
-
+    "version": "1.4",
+    "homepage_url": "https://randoplan.com",
+    
     "icons": {
         "48": "images/icon-48.png",
         "96": "images/icon-96.png",
@@ -20,11 +21,10 @@
 
     "content_scripts": [{
         "js": [ "content.js" ],
-        "matches": [ "*://example.com/*" ]
+        "matches": [ "*://ridewithgps.com/routes/*", "*://www.strava.com/routes/*", "*://*.randoplan.com/*" ]
     }],
 
     "action": {
-        "default_popup": "popup.html",
         "default_icon": {
             "16": "images/toolbar-icon-16.png",
             "19": "images/toolbar-icon-19.png",
@@ -34,6 +34,10 @@
             "72": "images/toolbar-icon-72.png"
         }
     },
-
-    "permissions": [ ]
+    
+    "permissions": [ "nativeMessaging", "activeTab", "scripting", "declarativeNetRequest"],
+    
+    "externally_connectable": {
+        "matches": [ "*://*.randoplan.com/*", "http://127.0.0.1/*", "http://localhost/*" ]
+    }
 }
