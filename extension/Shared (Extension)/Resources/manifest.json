@@ -35,7 +35,7 @@
         }
     },
     
-    "permissions": [ "nativeMessaging", "activeTab", "scripting", "declarativeNetRequest"],
+    "permissions": [ "nativeMessaging", "activeTab", "scripting" ],
     
     "externally_connectable": {
         "matches": [ "*://*.randoplan.com/*", "http://127.0.0.1/*", "http://localhost/*" ]
