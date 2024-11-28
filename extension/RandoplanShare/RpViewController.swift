@@ -28,7 +28,12 @@ class RpViewController: UIViewController {
         var responder: UIResponder? = self
         while responder != nil {
             if let application = responder as? UIApplication {
-                return application.perform(#selector(openURL(_:)), with: url) != nil
+                application.open(url) { success in
+                    if success {
+                        print("browser successfuly opened")
+                    }
+                }
+                return true
             }
             responder = responder?.next
         }
@@ -80,8 +85,13 @@ class RpViewController: UIViewController {
             
             if let url = item as? NSURL, let urlString = url.absoluteString {
                 let routeId = URL(string: urlString)?.lastPathComponent
-                let randoplanUrl = self.makeRandoplanUrl(routeId: routeId!, type:routeType.strava)
-                print("Opened Strava URL with result " + String(self.openURL(randoplanUrl)))
+                if (urlString.contains("ridewithgps")) {
+                    let randoplanUrl = self.makeRandoplanUrl(routeId: routeId!, type:routeType.rwgps)
+                    print("Opened RWGPS URL with result " + String(self.openURL(randoplanUrl)))
+                } else {
+                    let randoplanUrl = self.makeRandoplanUrl(routeId: routeId!, type:routeType.strava)
+                    print("Opened Strava URL with result " + String(self.openURL(randoplanUrl)))
+                }
             }
             self.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
         }
@@ -99,7 +109,8 @@ class RpViewController: UIViewController {
         if itemProvider.hasItemConformingToTypeIdentifier(typeText) {
             handleIncomingText(itemProvider: itemProvider)
             // Check if object is of type URL
-        } else if itemProvider.hasItemConformingToTypeIdentifier(typeURL) {
+        }
+        if itemProvider.hasItemConformingToTypeIdentifier(typeURL) {
             handleIncomingURL(itemProvider: itemProvider)
         } else {
             print("Error: No url or text found")
